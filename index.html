@@ -1,0 +1,647 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Mohammed" content="anglogoldashanti.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">  
+    <!--<link href="css/styles.css?v=<?= filemtime('css/styles.css') ?>" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/styles.css?<?php echo filemtime('css/styles.css') ?>"/>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <fieldset>
+      <div class="main">
+       <header>
+        <div class="col-md-1">
+        <img src="./images/ag1.jpg" style="width: 80px; height: 75px;z-index: 1; position: absolute;">
+        </div>
+        <div class="col-md-10">
+        <h1 style="background-color: #800000; padding: 10px; margin: -2px 0px 20px 0px;">CRUSHER PLANT DOWNTIME REPORTER</h1>
+        </div>
+        <div class="col-md-1">
+        <img src="./images/ag1.jpg" style="width: 80px; height: 75px;z-index: 1; position: absolute;">
+        </div>
+       </header>
+    <form onsubmit="return false" autocomplete="false">
+      <div class="col-md-6">
+        <label>Select Equipment Description</label>
+          <input type="text" autocomplete="new-password" name="equipment" id="justAnInputBox" placeholder="equipment description"/>
+      </div>
+      <div class="col-md-6">
+      <label>Select Downtime</label>
+      <select name="downtime" class="single2" class="js-states form-control" id="downtime">
+    	  <option></option>
+        <option>power outage</option>
+        <option>high buffer stockpile level</option>
+        <option>changed defective idler</option>
+        <option>bin empty</option>
+        <option>bin blocked</option> 
+        <option>patched apron feeder head chute leakage</option> 
+        <option>chute blocked </option>
+        <option>winch faulty</option>
+        <option>tripped off at mcc</option>
+        <option>conduct belt cut</option>
+        <option>replace timing belt</option>
+        <option>lube oil level low</option>
+        <option>planned maintenance shutdown</option>
+        <option>defective bearing</option>
+        <option>defective back stop</option>
+        <option>calibration</option>
+        <option>clear spillage</option>
+        <option>defective idler</option>
+        <option>refill oil</option>
+        <option>tracked conveyor</option>
+        <option>robot light interlock activated</option>
+        <option>communication error </option>
+        <option>cut flaps</option>
+        <option>lubrication fault</option>
+        <option>replace mesh</option>
+        <option>defective side skirt</option>
+        <option>control system faulty</option>
+        <option>power system faulty</option>
+        <option>high buffer stockpile level</option>
+        <option>equipment faulty</option>
+        <option>low buffer stockpile level</option>
+      </select>
+    </div>
+    <div class="col-md-6" style="margin-top: 10px;">
+      <label>Select Failure Mode</label>
+      <select name="failure" class="single3" class="js-states form-control" id="failure">
+        <option></option>
+        <option>not applicable</option>
+        <option>power outage</option>
+        <option>inconsistent feeding</option>
+        <option>loader unavailable</option>
+        <option>rock buildups</option>
+        <option>leakage</option>
+        <option>foreign material</option>
+        <option>chute sensor</option>
+        <option>over temperature</option>
+        <option>burnt</option>
+        <option>overload</option>
+        <option>underspeed</option>
+        <option>tear</option>
+        <option>loose</option>
+        <option>trip</option>
+        <option>interlock activated</option>
+        <option>short circuit</option>
+        <option>loose contact</option>
+        <option>open circuit</option>
+        <option>low voltage</option>
+        <option>high voltage</option>
+        <option>power outage</option>
+        <option>unstable power</option>
+        <option>misalignment</option>
+        <option>no alarm</option>
+        <option>empty reservior</option>
+        <option>loose</option>
+        <option>removed</option>
+        <option>brooken</option>
+        <option>torn</option>
+        <option>worn</option>         
+      </select>
+    </div>
+    <div class="col-md-2" style="margin-top: 10px;">
+      <label>Select Category</label>
+      <select name="category" class="single4" class="js-states form-control" id="category">
+      	<option></option>
+        <option>mechanical</option>
+        <option>electrical</option>
+        <option>production</option>
+        <option>internal power</option>
+        <option>external power</option>
+      </select>
+    </div>
+    <div class="col-md-2" style="margin-top: 10px;">
+    <label>Select Shift</label>
+    <select class="single5" class="js-states form-control" id="shift">
+      <option></option>
+      <option>day</option>
+      <option>night</option>
+    </select>
+  </div>
+  <div class="col-md-2" style="margin-top: 10px;" >
+    <label>Date</label>
+      <input type='text' name="dates" class="form-control" id='datetimepicker3' style="height: 28px;" />
+  </div>
+  <div class="col-md-6" style="margin-top: 10px;">
+      <label>Remarks</label>
+      <textarea name="remarks" id="remark" style="width: 650px; height: 60px;"></textarea>
+    </div>
+  <div class="col-md-2" style="margin-top: 10px;">
+    <label>Stop time</label>
+      <input type='text' autocomplete="new-password" name="stop" class="form-control" id='datetimepicker1' style="height: 28px;"/>
+  </div> 
+  <div class="col-md-2" style="margin-top: 40px; margin-left: 52px;">
+    <button type="submit" id="entry" value="Submit" title="submit input">Submit</button>
+  </div>
+  <div class="col-md-2" style="margin-top: 10px; margin-left: -52px;">
+    <label>Start time</label>
+      <input type='text' autocomplete="new-password" name="start" class="form-control" id='datetimepicker2' style="height: 28px;"/>
+  </div>
+</form>
+  <div class="col-md-2" style="margin-top: 10px; margin-left: 0;">
+      <button id="print" title="print report" onclick="print()">Print</button>
+      <button id="delete" title="delete selected rows">Delete</button>
+    </div>
+    <div class="col-md-1" style="margin-top: 10px; margin-left: 52px;">
+      <button id="update" title="update analysis data" onclick="">Update</button>
+    </div>
+  
+  <div class="col-md-2" style="margin-top: 10px; margin-left: 61px;">
+    <button id="chart" title="toggle to show/hide charts">Charts</button>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Analysis</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="2020.html" target="_blank">2020</a>
+           </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="sidebar">
+    <div id="prtTable">
+    <div class="col-md-2">
+      <img src="./images/snapshot.png" style="width: 200px; height: 60px;">
+    </div>
+    <div class="col-md-7">
+  	 <h2 style="color: #800000; text-align: center;font-weight: bolder; font-family: Microsoft Sans Serif;">DAILY DOWNTIME REPORT</h2>
+    </div>
+    <div class="col-md-2">
+    <p id="time" style="padding-top: 20px;"></p>
+    </div>
+    <div class="col-md-1">
+      <div class="no-print">
+      <button class="openbtn" title="Toggle screen" style="margin-left: 45px;" onclick="toggleMenu()">☰</button> 
+    </div>
+  </div>
+      <table id="table" class="first">
+        <thead>
+          <tr>
+          <th></th>
+          <th>#</th>
+          <th>Equipment Description</th>
+          <th>Downtime</th>
+          <th>Failure Mode</th>
+          <th>Category</th>
+          <th>Shift</th>
+          <th>Duration</th>
+          <th>Remarks</th>
+          <th></th>
+          </tr>
+        </thead>
+        <tbody>     
+        </tbody>
+      </table>
+  <div id="charts">
+   <div id="myCanvas" style="background-color: white;">
+    <div class="col-md-4">
+     <canvas id="barChart"></canvas>
+    </div>
+    <div class="col-md-4">    
+     <canvas id="pieChart"></canvas>
+    </div>
+    <div class="col-md-4">
+     <canvas id="lineChart"></canvas>
+    </div>
+    <button id="downloadPdf" class="no-print" title="Save charts">Save</button>
+    </div>
+  </div>
+  </div>
+  <div id="endorse">
+  <div class="col-md-12">
+  	<pre style="margin-top: 25px; font-size: 14px; border: none;">
+    Operator:..................................................................                               Signature:...................................</pre>
+    <pre style="margin-top: 15px; font-size: 14px; border: none;">
+    Shift Engineer:............................................................                               Signature:...................................</pre>
+    <pre style="margin-top: 15px; font-size: 14px; border: none;">
+    Shift Supervisor:..........................................................                               Signature:...................................</pre>
+  </div>
+  </div>
+  </div>  
+</fieldset>
+</div>
+<script>document.write('<script src="./assets/js/scripts.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="icontains.js"  type="text/javascript"></script>
+<script src="comboTreePlugin.js"  type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var SampleJSONData = [
+    {
+        id: 0,
+        title: 'PRIMARY',
+        subs: [
+            {
+                id: 10,
+                title: '01-cvr-12-mtr01 motor, cvr12 conveyor'
+            }, {
+                id: 11,
+                title: '01-cvr-12-str01 structure, cvr12'
+            }, {
+                id: 12,
+                title: '01-cvr-13-gbx01 gearbox, cvr13 conveyor'
+            }, {
+                id: 13,
+                title: '01-cvr-13-mtr01 motor, cvr13 conveyor'
+            }, {
+                id: 14,
+                title: '01-cvr-13-str01 structure, cvr13'
+            }, {
+                id: 15,
+                title: '01-cvr-13-wch05 winch 05, conveyor cvr13'
+            }, {
+                id: 16,
+                title: '01-cvr-14-gbx01 gearbox, cvr14 conveyor'
+            }, {
+                id: 17,
+                title: '01-cvr-14-mtr01 motor, cvr14 conveyor'
+            }, {
+                id: 18,
+                title: '01-cvr-12-gbx01 gearbox, cvr12 conveyor'
+            }, {
+                id: 19,
+                title: '01-cvr-14-str01 structure, cvr14'
+            }, {
+                id: 20,
+                title: '01-cvr-14-wch06 winch 06, conveyor cvr14'
+            }, {
+                id: 21,
+                title: '01-mag-02 magnet 02, tramp iron'
+            }, {
+                id: 22,
+                title: '01-apf-05-str01 feeder, apron primary'
+            }, {
+                id: 23,
+                title: '01-apf-06-lub01 lube, feeder apron primary'
+            }, {
+                id: 24,
+                title: '01-bts-01 belt scale, cvr12 conveyor'
+            }, {
+                id: 25,
+                title: '01-cru-06 crusher, primary crusher'
+            }, {
+                id: 26,
+                title: '01-hst-02 crane 01, o/h primary crusher'
+            }, {
+                id: 27,
+                title: 'motor, feeder apron primary'
+            }, {
+                id: 28,
+                title: '01-cru-06- mtr motor, gyratory crusher'
+            }, {
+                id: 29,
+                title: 'pump 21, spillage primary'
+            }, {
+                id: 30,
+                title: '01-rbk-01, rock breaker, primary'
+            }, {
+                id: 31,
+                title: '01-apf-05- hydrodrive, primary apron feeder'
+            }, {
+                id: 32,
+                title: '01-pmp-01 pump, dust suppresion primary'
+            }, {
+                id: 33,
+                title: '01-hst-03 crane 01,o/h primary crusher'
+            }, {
+                id: 34,
+                title: '01-pmp-01 pump, dust suppression'
+            }   
+        ]
+    }, {
+        id: 1,
+        title: 'SECONDARY',
+        subs: [
+            {
+                id: 10,
+                title: '01-cvr-16-str01 structure, cvr16 conveyor'
+            }, {
+                id: 11,
+                title: '01-cvr-16-gbx01 gearbox, cvr16 conveyor'
+            }, {
+                id: 12,
+                title: '01-cvr-16-mtr01 motor, cvr16 conveyor'
+            }, {
+                id: 13,
+                title: '01-cvr-17-gbx01 gearbox, cvr17 conveyor'
+            }, {
+                id: 14,
+                title: '01-cvr-17-mtr01 motor, cvr17 conveyor'
+            }, {
+                id: 15,
+                title: '01-cvr-17-str01 structure, cvr17 conveyor'
+            }, {
+                id: 16,
+                title: '01-cvr-17-wch07 winch 04, conveyor cvr17'
+            }, {
+                id: 17,
+                title: '01-cvr-18-gbx01 gearbox, cvr18 conveyor'
+            }, {
+                id: 18,
+                title: '01-cvr-15-mtr01 motor, cvr15 conveyor'
+            }, {
+                id: 19,
+                title: '01-cvr-18-mtr01 motor, cvr18 conveyor'
+            }, {
+                id: 20,
+                title: '01-cvr-19-gbx01 gearbox, cvr19 conveyor'
+            }, {
+                id: 21,
+                title: '01-cvr-19-mtr01 motor, cvr19 conveyor'
+            }, {
+                id: 22,
+                title: '01-cvr-19-str01 structure, cvr19 conveyor'
+            }, {
+                id: 23,
+                title: '01-cvr-18-str01 structure, cvr18 conveyor'
+            }, {
+                id: 24,
+                title: '01-cvr-15-gbx01 gearbox, cvr15 conveyor'
+            }, {
+                id: 25,
+                title: '01-mag-03 magnet 02, tramp iron'
+            }, {
+                id: 26,
+                title: '01-pmp-02 pump01, dust uppression'
+            }, {
+                id: 27,
+                title: '01-hst-11 crane 11, o/h secondary crusher'
+            }, {
+                id: 28,
+                title: '01-blf-02-gbx01 gearbox, belt feeder 2'
+            }, {
+                id: 29,
+                title: '01-blf-02 str02 structure, belt feeder 2'
+            }, {
+                id: 30,
+                title: '01-bts-02 belt scale, cvr15 conveyor'
+            }, {
+                id: 31,
+                title: '01-bts-03 belt scale, cvr18 conveyor'
+            }, {
+                id: 32,
+                title: '01-bts-04 belt scale, cvr19 conveyor'
+            }, {
+                id: 33,
+                title: '01-cru-07-cru-01 crusher, secondary 1'
+            }, {
+                id: 34,
+                title: '01-cru-07-lub01 lube, secondary 1'
+            }, {
+                id: 35,
+                title: '01-cru-08-cru-01 crusher, secondary crusher 2'
+            }, {
+                id: 36,
+                title: '01-cru-08-lub01 lube,secondary crusher 2'
+            }, {
+                id: 37,
+                title: '01-cvr-15-str01 structure, cvr15 conveyor'
+            }, {
+                id: 38,
+                title: '01-cru-08-mtr01 motor, secondary 1'
+            }, {
+                id: 39,
+                title: '01-cru-08-mtr02 motor, secondary 2'
+            }, {
+                id: 40,
+                title: '01-pmp-02, pump, dust suppresion secondary crusher'
+            }, {
+                id: 41,
+                title: 'pump 23, spillage secondary'
+            }, {
+                id: 42,
+                title: '01-blf-01-mtr01 motor, belt feeder 1'
+            }, {
+                id: 43,
+                title: '01-apf-05-lub01 lube, apron feeder 5'
+            }, {
+                id: 44,
+                title: '01-apf-06- hydrodrive, apron feeder 6'
+            }, {
+                id: 45,
+                title: 'motor, apron feeder 6'
+            }, {
+                id: 46,
+                title: 'motor, apron feeder 7'
+            }, {
+                id: 47,
+                title: 'motor, secondary 3'
+            }, {
+                id: 48,
+                title: 'motor, apron feeder 8'
+            }, {
+                id: 49,
+                title: 'motor, secondary 1 spare'
+            }, {
+                id: 50,
+                title: '01-apf-07-str01 structure apron feeder 7'
+            }, {
+                id: 51,
+                title: '01-apf-07-lub01 lube, apron feeder 7'
+            }, {
+                id: 52,
+                title: '01-apf-07-hdv01 hydrodrive,apron feeder 7'
+            }, {
+                id: 53,
+                title: '01-apf-06-str01 structure apron feeder 6'
+            }, {
+                id: 54,
+                title: '01-apf-08-hdv01 hydrodrive,apron feeder 8'
+            },
+            
+        ]
+    }, {
+        id: 2,
+        title: 'SCREENING',
+        subs: [
+            {
+                id: 10,
+                title:'01-hst-07 hoist 07, screens o/h'
+            }, {
+                id: 11,
+                title: '01-scr-06-str01 structure, vib screen 2'
+            }, {
+                id: 12,
+                title: '01-hst-08 hoist 08, screens o/h'
+            }, {
+                id: 13,
+                title: '01-scr-04-mtr01 motor, primary screen'
+            }, {
+                id: 14,
+                title: '01-scr-04-str01 structure, primary screen'
+            }, {
+                id: 15,
+                title: '01-scr-05-mtr01 motor, vib screen 1'
+            }, {
+                id: 16,
+                title: '01-scr-05-str01 structure, vib screen 1'
+            }, {
+                id: 17,
+                title: '01-scr-01-screen, primary crusher'
+            }, {
+                id: 18,
+                title: '01-scr-02-screen, secondary scren 1'
+            }, {
+                id: 19,
+                title: 'pump 12, sump screen area'
+            }, {
+                id: 20,
+                title: '01-vbf-01-feeder, 01 vibrating'
+            }, {
+                id: 21,
+                title: '01-vbf-02-feeder, 02 vibrating'
+            }, {
+                id: 22,
+                title: '01-vbf-03-feeder, 03 vibrating'
+            }, {
+                id: 23,
+                title: '01-scr-06-mtr01 motor, vib screen 2'
+            }
+        ]
+    }, {
+      id: 3,
+      title: 'OVERLAND',
+      subs: [
+          {
+             id: 10,
+             title: '01-cvr-5b-gbx03 gearbox no. 3, cvr05b conveyor'
+            }, {
+              id: 11,
+              title: '01-cvr-5b-gbx01 gearbox no.1, cvr05b conveyor'
+            }, {
+              id: 12,
+              title: '01-cvr-5b-mtr01 motor no.1, cvr05b conveyor'
+            }, {
+              id: 13,
+              title: '01-cvr-5b-mtr02 motor no 2, cvr05b conveyor'
+            },  {
+              id: 14,
+              title: '01-cvr-5b-mtr03 motor no.3, cvr05b conveyor'
+            }, {
+              id: 15,
+              title: '01-cvr-5b-str01 structure, cvr05b conveyor'
+            }, {
+              id: 16,
+              title: '01-cvr-06-str01 structure, cvr06 conveyor'
+            }, {
+              id: 17,
+              title: '01-cvr-5b-wch01 winch 02, cvr05b conveyor'
+            }, {
+              id: 18,
+              title: '01-cvr-5c-mtr01 motor, cvr05c conveyor'
+            }, {
+              id: 19,
+              title: '01-cvr-5c-gbx01 gearbox, cvr05c conveyor'
+            }, {
+              id: 21,
+              title: '01-cvr-5c-str01 structure, cvr05c conveyor'
+            }, {
+              id: 22,
+              title: '01-cvr-5c-wch01 winch 03, cvr05c conveyor'
+            }, {
+              id: 23,
+              title: '01-cvr-5d-gbx01 gearbox, cvr05d conveyor'
+            }, {
+              id: 24,
+              title: '01-cvr-5d-mtr01 motor, cvr05d conveyor'
+            }, {
+              id: 25,
+              title: '01-cvr-5d-str01 structure, cvr05d conveyor'
+            }, {
+              id: 26,
+              title: '01-cvr-5d-wch01 winch 04, cvr05d conveyor'
+            }, {
+              id: 27,
+              title: '01-cvr-06-gbx01 gearbox, cvr06 conveyor'
+            }, {
+              id: 28,
+              title: '01-cvr-06-mtr01 motor, cvr06 conveyor'
+            }, {
+              id: 29,
+              title: '01-cvr-5b-gbx02 gearbox 2, cvr05b conveyor'
+            },      
+        ]
+      }, {
+      id: 3,
+      title: 'SCATS PLANT',
+      subs: [
+          {
+                id: 10,
+                title: 'motor, scats crusher 1'
+            }     
+        ]
+      }, {
+      id: 4,
+      title: 'POWER SYSTEM',
+      subs: [
+          {
+                id: 10,
+                title: '01-mcc-01 mcc crusher'
+            }, {
+                id: 11,
+                title: '01-mcc-02, mcc secondary crusher'
+            }     
+        ]
+      }
+   ];
+
+var comboTree1;
+
+$(document).ready(function($) {
+     comboTree1 = $('#justAnInputBox').comboTree({
+      source : SampleJSONData,
+      isMultiple: false,
+      cascadeSelect: false
+    });    
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+$(function () {
+        $('#datetimepicker1').datetimepicker({
+        widgetPositioning: {
+            vertical: 'top'
+        }
+        });
+        $('#datetimepicker2').datetimepicker({
+            widgetPositioning: {
+            vertical: 'top'
+        },
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker1").on("dp.change", function (e) {
+            $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker2").on("dp.change", function (e) {
+            $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+    $(function () {
+        $('#datetimepicker3').datetimepicker({
+            format: 'YYYY-MM-DD',
+            widgetPositioning: {
+              vertical: 'bottom'
+        }
+        });
+});
+
+</script>
+</body>
+</html>

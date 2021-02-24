@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Mohammed" content="anglogoldashanti.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css?<?php echo filemtime('css/styles.css') ?>"/>
+    <style>
+      .hold1, .hold2, .hold3, .hold4, .hold5, .hold6, .hold7, .hold8, .hold9, .hold10, .hold11, .hold12 {
+        display: none;
+      }
+    </style>  
+  </head>
+  <body>
+    <div class="container-fluid">
+      <fieldset>
+        <div class="sidenav1">
+          <header>
+            <div class="col-md-1">
+              <img class="img1" src="./images/ag1.jpg">
+            </div>
+            <div class="col-md-10">
+            <h1 class="hed">CRUSHER PLANT DOWNTIME ANALYSIS - 2020</h1>
+            </div>
+            <div class="col-md-1">
+              <img class="img2" src="./images/ag1.jpg">
+            </div>
+          </header>
+        </div>
+        <div class="sidenav2">
+          <div class="col-md-12" style="margin-top: 60px;">
+            <button class="button button1" id="btn120">January</button>
+            <button class="button button1" id="btn220">February</button>
+            <button class="button button1" id="btn320">March</button>
+            <button class="button button2" id="btn420">April</button>
+            <button class="button button2" id="btn520">May</button>
+            <button class="button button2" id="btn620">June</button>
+            <button class="button button3" id="btn720">July</button>
+            <button class="button button3" id="btn820">August</button>
+            <button class="button button3" id="btn920">September</button>
+            <button class="button button4" id="btn1020">October</button>
+            <button class="button button4" id="btn1120">November</button>
+            <button class="button button4" id="btn1220">December</button>
+            <p id="time" style="float: right;"></p>
+          </div>
+        </div>
+        <div class ="hold1">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart1" width="1100" height="500"></canvas>
+          </div>
+          </div>
+        <div class ="hold2">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart2" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold3">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart3" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold4">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart4" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold5">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart5" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold6">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart6" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold7">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart7" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold8">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart8" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold9">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart9" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold10">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart10" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold11">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart11" width="1100" height="500"></canvas>
+          </div>
+        </div>
+        <div class ="hold12">
+          <div style="position: absolute; margin: 120px 0px 0px 80px;">
+            <canvas id="myChart12" width="1100" height="500"></canvas>
+          </div>    
+        </div> 
+      </fieldset>
+    </div>  
+<script>document.write('<script src="./assets/js/scripts.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
+  </body>
+</html>
